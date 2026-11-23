@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simmer · A volume knob for every Mac app</title>
+<meta name="description" content="A free, open-source menu bar app that gives every Mac app its own volume. Turn the call up, the music down, and that one browser tab off.">
+<link rel="canonical" href="https://simmer.bnapier.dev/">
+<meta property="og:title" content="Simmer">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://simmer.bnapier.dev/">
+<meta property="og:image" content="https://simmer.bnapier.dev/assets/icon.png">
+<meta property="og:description" content="Bring every app down to a simmer. A free volume knob for each app on your Mac.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="styles.css">
+<script>
+  try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t } catch {}
+</script>
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <a class="home" href="#top" aria-label="Simmer, top of page"><img src="assets/icon.png" width="28" height="28" alt=""></a>
+  <a class="wide" href="#how">How it works</a>
+  <a class="wide" href="#privacy">Privacy</a>
+  <a href="#install">Install</a>
+  <button id="theme" type="button" aria-label="Switch between light and dark">◐</button>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <h1>Bring every app<br>down to a <em>simmer</em>.</h1>
+    <div class="pitch">
+      <p>Your call is too quiet. Your music is too loud. A tab you can’t find is playing an ad. Simmer gives every Mac app its own volume, right in the menu bar.</p>
+      <div class="actions">
+        <a class="download" href="https://github.com/barry-napier/simmer/releases/latest/download/Simmer.dmg">Download for Mac</a>
+        <a class="source" href="https://github.com/barry-napier/simmer">Read the code</a>
+      </div>
+      <p class="needs">Free. No account. Needs macOS 15 or later.</p>
+    </div>
+  </header>
+
+  <section class="stage" aria-label="Try the Simmer mixer">
+    <div class="stage-copy">
+      <h2>Try it here.</h2>
+      <p>Press play, then move the sliders. Each app on this page makes its own sound, just like apps on your Mac.</p>
+      <button id="play" type="button" aria-pressed="false"><span class="icon" aria-hidden="true">▶</span> <span class="label">Play the sounds</span></button>
+      <p class="hint">Sound is made in your browser. Nothing is downloaded.</p>
+    </div>
+
+    <div class="panel" role="group" aria-label="Simmer menu">
+      <div class="panel-head"><b>Simmer</b><span>MacBook Speakers</span><button id="reset" type="button">Reset All</button></div>
+      <ul id="mixer"></ul>
+      <div class="panel-foot"><label><input type="checkbox" checked disabled> Open at Login</label><span>Quit</span></div>
+    </div>
+  </section>
+
+  <section id="how" class="section">
+    <div class="section-head">
+      <h2>How it works</h2>
+      <p>macOS has one volume for everything. Simmer adds one for each app.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Click the sliders in your menu bar.</b><span>Every app that is playing sound shows up, with its icon.</span></li>
+      <li><b>Slide or mute.</b><span>Each app gets louder or softer on its own. Your Mac’s main volume stays where it is.</span></li>
+      <li><b>Forget about it.</b><span>Simmer remembers each app’s volume. Next time that app makes a sound, it is already right.</span></li>
+    </ol>
+  </section>
+
+  <section id="privacy" class="section privacy">
+    <h2>It hears your apps. <em>It keeps nothing.</em></h2>
+    <dl>
+      <div><dt>Nothing recorded</dt><dd>Simmer takes each app’s sound and plays it back at your volume, a few thousandths of a second later. It is never saved.</dd></div>
+      <div><dt>Nothing sent</dt><dd>No account, no server, no tracking. The only network use is checking for updates.</dd></div>
+      <div><dt>Open code</dt><dd>Every line is on GitHub, so you, or someone you trust, can check.</dd></div>
+    </dl>
+  </section>
+
+  <section id="install" class="install">
+    <h2>Turn it down.</h2>
+    <ol>
+      <li>Download Simmer and drag it to Applications.</li>
+      <li>Open it. Click the sliders icon in the menu bar.</li>
+      <li>When macOS asks, let Simmer hear other apps. That is how it changes their volume.</li>
+    </ol>
+    <a class="download" href="https://github.com/barry-napier/simmer/releases/latest/download/Simmer.dmg">Download for Mac</a>
+    <p class="needs">Free and open source. Simmer updates itself.</p>
+  </section>
+</main>
+
+<footer>
+  <span>Simmer, by Barry Napier. Also by me: <a href="https://nudge.bnapier.dev">Nudge</a>.</span>
+  <a href="https://github.com/barry-napier/simmer">GitHub</a>
+  <a href="https://github.com/barry-napier/simmer/releases">Releases</a>
+  <a href="https://github.com/barry-napier/simmer/blob/main/LICENSE">MIT License</a>
+</footer>
+
+</body>
+</html>

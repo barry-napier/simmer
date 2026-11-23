@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0213309D7EF56E009AD9BDDD /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B6D4A74A638320AA8CE038 /* Log.swift */; };
+		1195C2036B1C460A96EDFB03 /* AudioProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBE3FFF718848E0E83D551B /* AudioProcesses.swift */; };
+		24A05289956E40F1AB8E5DCF /* Mixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790AA0FCBF883964D08F5E2 /* Mixer.swift */; };
+		2CDBB109789CE5C76BE6D1FD /* DebugLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDA8FC80EFC124BEA3282E /* DebugLogView.swift */; };
+		43A1B21D3AFD75F4AD856A6E /* Windows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45611FB45D749F62933D3C80 /* Windows.swift */; };
+		630DE861960C9DD3660B0A5C /* SimmerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E4AD1A53D77CEEB0BCAA94 /* SimmerApp.swift */; };
+		7C8C3F0CE0122BA283E9FE32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 701A018823899CD83A9C5CC9 /* Assets.xcassets */; };
+		80621B4DA03F557D2C719428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6B92B4554207D3862A251 /* AppDelegate.swift */; };
+		80F90E185881735D2DD5689A /* MixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F428368F359F7CCEA0D19 /* MixerView.swift */; };
+		8931862B308E568902CC6DD6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C597FA8B2FC6E721C30101 /* WelcomeView.swift */; };
+		BBA249BBA2C1884F70534979 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6A01912E1DC9B8F083DF5A /* Permissions.swift */; };
+		C29AC878AD645137A7ABE6F6 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = E95FA84EC2B4A5947F8FB374 /* Sparkle */; };
+		E1398260D2B2B1582BC33015 /* CoreAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C282641494BD6A4734292 /* CoreAudio.swift */; };
+		F42FCE43CAB464CEAE1427FD /* AppTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495E86E1EA8DC0F08F4BDE6 /* AppTap.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		16B6D4A74A638320AA8CE038 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		3495E86E1EA8DC0F08F4BDE6 /* AppTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTap.swift; sourceTree = "<group>"; };
+		45611FB45D749F62933D3C80 /* Windows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windows.swift; sourceTree = "<group>"; };
+		5790AA0FCBF883964D08F5E2 /* Mixer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mixer.swift; sourceTree = "<group>"; };
+		5E7C282641494BD6A4734292 /* CoreAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAudio.swift; sourceTree = "<group>"; };
+		701A018823899CD83A9C5CC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86E4AD1A53D77CEEB0BCAA94 /* SimmerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimmerApp.swift; sourceTree = "<group>"; };
+		895F428368F359F7CCEA0D19 /* MixerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerView.swift; sourceTree = "<group>"; };
+		8B5B492EBABDC1710073E479 /* Simmer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simmer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABDDA8FC80EFC124BEA3282E /* DebugLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogView.swift; sourceTree = "<group>"; };
+		ACD6B92B4554207D3862A251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B4C597FA8B2FC6E721C30101 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		BB6A01912E1DC9B8F083DF5A /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
+		C8C099F4880988AC17BECF61 /* Simmer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Simmer.xcconfig; sourceTree = "<group>"; };
+		DDBE3FFF718848E0E83D551B /* AudioProcesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioProcesses.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AA986910236F10D49A4DF5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C29AC878AD645137A7ABE6F6 /* Sparkle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33422A7761BB9D6080C2FAFA /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				16B6D4A74A638320AA8CE038 /* Log.swift */,
+				BB6A01912E1DC9B8F083DF5A /* Permissions.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		5F350C1208220C287FB7DD27 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B5B492EBABDC1710073E479 /* Simmer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6197D4738C72281755449A71 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C8C099F4880988AC17BECF61 /* Simmer.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		88BDE88A18833194941BA096 /* Simmer */ = {
+			isa = PBXGroup;
+			children = (
+				701A018823899CD83A9C5CC9 /* Assets.xcassets */,
+				F410388374A9CC48861DF693 /* App */,
+				E4857E63917CFCE83EEC2B5A /* Audio */,
+				33422A7761BB9D6080C2FAFA /* Support */,
+				BFAC9E9ABA0621F94176364E /* UI */,
+			);
+			path = Simmer;
+			sourceTree = "<group>";
+		};
+		8990FF8C30A8E69F627E55E0 = {
+			isa = PBXGroup;
+			children = (
+				6197D4738C72281755449A71 /* Config */,
+				88BDE88A18833194941BA096 /* Simmer */,
+				5F350C1208220C287FB7DD27 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFAC9E9ABA0621F94176364E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				ABDDA8FC80EFC124BEA3282E /* DebugLogView.swift */,
+				895F428368F359F7CCEA0D19 /* MixerView.swift */,
+				B4C597FA8B2FC6E721C30101 /* WelcomeView.swift */,
+				45611FB45D749F62933D3C80 /* Windows.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E4857E63917CFCE83EEC2B5A /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				3495E86E1EA8DC0F08F4BDE6 /* AppTap.swift */,
+				DDBE3FFF718848E0E83D551B /* AudioProcesses.swift */,
+				5E7C282641494BD6A4734292 /* CoreAudio.swift */,
+				5790AA0FCBF883964D08F5E2 /* Mixer.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		F410388374A9CC48861DF693 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				ACD6B92B4554207D3862A251 /* AppDelegate.swift */,
+				86E4AD1A53D77CEEB0BCAA94 /* SimmerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D345909726E4A57F7097582 /* Simmer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8599F466D5503DC0AAEFAAF4 /* Build configuration list for PBXNativeTarget "Simmer" */;
+			buildPhases = (
+				3EB4B4811E65297F0EEF2D6E /* Sources */,
+				E604EFF47F9AB026251AE928 /* Resources */,
+				1AA986910236F10D49A4DF5B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Simmer;
+			packageProductDependencies = (
+				E95FA84EC2B4A5947F8FB374 /* Sparkle */,
+			);
+			productName = Simmer;
+			productReference = 8B5B492EBABDC1710073E479 /* Simmer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5901C1E71EC1025B67DC6F9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5D345909726E4A57F7097582 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 7416107FF58914C14C2EABC9 /* Build configuration list for PBXProject "Simmer" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 8990FF8C30A8E69F627E55E0;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				30F8EEFF57A77B585217C0CB /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5F350C1208220C287FB7DD27 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D345909726E4A57F7097582 /* Simmer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E604EFF47F9AB026251AE928 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C8C3F0CE0122BA283E9FE32 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EB4B4811E65297F0EEF2D6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80621B4DA03F557D2C719428 /* AppDelegate.swift in Sources */,
+				F42FCE43CAB464CEAE1427FD /* AppTap.swift in Sources */,
+				1195C2036B1C460A96EDFB03 /* AudioProcesses.swift in Sources */,
+				E1398260D2B2B1582BC33015 /* CoreAudio.swift in Sources */,
+				2CDBB109789CE5C76BE6D1FD /* DebugLogView.swift in Sources */,
+				0213309D7EF56E009AD9BDDD /* Log.swift in Sources */,
+				24A05289956E40F1AB8E5DCF /* Mixer.swift in Sources */,
+				80F90E185881735D2DD5689A /* MixerView.swift in Sources */,
+				BBA249BBA2C1884F70534979 /* Permissions.swift in Sources */,
+				630DE861960C9DD3660B0A5C /* SimmerApp.swift in Sources */,
+				8931862B308E568902CC6DD6 /* WelcomeView.swift in Sources */,
+				43A1B21D3AFD75F4AD856A6E /* Windows.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5C713F89794366E857B2A2AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		8AD9100A91E9DAC395887BE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		8CD4B29433C748D566F2D1AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8C099F4880988AC17BECF61 /* Simmer.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/Simmer.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Simmer;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.barrynapier.simmer;
+				PRODUCT_NAME = Simmer;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FDF8B67EDAF9AA61D6AF0D71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8C099F4880988AC17BECF61 /* Simmer.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/Simmer.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Config/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Simmer;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.barrynapier.simmer;
+				PRODUCT_NAME = Simmer;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7416107FF58914C14C2EABC9 /* Build configuration list for PBXProject "Simmer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AD9100A91E9DAC395887BE1 /* Debug */,
+				5C713F89794366E857B2A2AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8599F466D5503DC0AAEFAAF4 /* Build configuration list for PBXNativeTarget "Simmer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF8B67EDAF9AA61D6AF0D71 /* Debug */,
+				8CD4B29433C748D566F2D1AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		30F8EEFF57A77B585217C0CB /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = exactVersion;
+				version = 2.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E95FA84EC2B4A5947F8FB374 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30F8EEFF57A77B585217C0CB /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5901C1E71EC1025B67DC6F9D /* Project object */;
+}

@@ -1,0 +1,109 @@
+# Builds, signs, notarizes and publishes a Simmer release, with the Sparkle
+# appcast that tells installed copies about the update.
+#
+# Start it either way:
+#   - push a version tag:  ./scripts/ship.sh 0.2.0   (or git tag v0.2.0 && git push origin v0.2.0)
+#   - or on GitHub: Actions > Release > Run workflow, and type the version.
+#
+# Repository secrets it needs (Settings > Secrets and variables > Actions):
+#   MACOS_CERT_P12        your Developer ID Application certificate, as base64 .p12
+#   MACOS_CERT_PASSWORD   the password you gave that .p12 when exporting it
+#   NOTARY_APPLE_ID       the Apple ID of your developer account
+#   NOTARY_PASSWORD       an app-specific password for that Apple ID
+#   SPARKLE_PRIVATE_KEY   the Sparkle update key (generate_keys -x)
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release, for example 0.2.0"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: macos-26
+    timeout-minutes: 60
+    env:
+      TEAM_ID: B45SDP2V36
+    steps:
+      - name: Check out
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0  # the build number is the commit count
+
+      - name: Work out the version
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="${GITHUB_REF_NAME#v}"
+          fi
+          VERSION="${VERSION#v}"
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Version must look like 1.2.3, got '$VERSION'"
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Import the Developer ID certificate
+        env:
+          MACOS_CERT_P12: ${{ secrets.MACOS_CERT_P12 }}
+          MACOS_CERT_PASSWORD: ${{ secrets.MACOS_CERT_PASSWORD }}
+        run: |
+          KEYCHAIN="$RUNNER_TEMP/release.keychain-db"
+          KEYCHAIN_PASSWORD="$(uuidgen)"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          # Apple's Developer ID intermediate certificates, so the chain is complete.
+          for ca in DeveloperIDCA DeveloperIDG2CA; do
+            curl -fsSL "https://www.apple.com/certificateauthority/$ca.cer" -o "$RUNNER_TEMP/$ca.cer"
+            security import "$RUNNER_TEMP/$ca.cer" -k "$KEYCHAIN" -T /usr/bin/codesign || true
+          done
+          echo "$MACOS_CERT_P12" | base64 --decode > "$RUNNER_TEMP/cert.p12"
+          security import "$RUNNER_TEMP/cert.p12" -P "$MACOS_CERT_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN"
+          rm -f "$RUNNER_TEMP/cert.p12"
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN" >/dev/null
+          security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
+          security find-identity -v -p codesigning "$KEYCHAIN" | grep -q "Developer ID Application" \
+            || { echo "::error::No Developer ID Application identity in MACOS_CERT_P12"; exit 1; }
+
+      - name: Build, notarize and publish
+        env:
+          NOTARY_APPLE_ID: ${{ secrets.NOTARY_APPLE_ID }}
+          NOTARY_PASSWORD: ${{ secrets.NOTARY_PASSWORD }}
+          SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          printf 'DEVELOPMENT_TEAM = %s\n' "$TEAM_ID" > Config/Local.xcconfig
+          printf '%s' "$SPARKLE_PRIVATE_KEY" > "$RUNNER_TEMP/sparkle.key"
+          SPARKLE_KEY_FILE="$RUNNER_TEMP/sparkle.key" ./scripts/release.sh "$VERSION" --publish
+          rm -f "$RUNNER_TEMP/sparkle.key"
+
+      - name: Upload the build log on failure
+        if: failure()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: release-build
+          path: build/release
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Remove the keychain
+        if: always()
+        run: security delete-keychain "$RUNNER_TEMP/release.keychain-db" || true

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Shown when macOS asks to let Simmer hear other apps. -->
+	<key>NSAudioCaptureUsageDescription</key>
+	<string>Simmer changes each app's volume. To do that, it takes the app's sound and plays it back louder or softer. Nothing is recorded or saved.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Simmer never uses your microphone. macOS groups it with the permission Simmer needs to change other apps' volume.</string>
+	<!-- Sparkle: where updates are announced, and the key that signs them. -->
+	<key>SUFeedURL</key>
+	<string>https://github.com/barry-napier/simmer/releases/latest/download/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>20+MYdsnJNHN1rB8y3QKAn7k+jlhYikLycR3n8W4gbo=</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+</dict>
+</plist>
