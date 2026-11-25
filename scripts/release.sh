@@ -34,7 +34,7 @@ if [[ $PUBLISH == 1 && $NOTARIZE == 0 ]]; then
 fi
 
 REPO="barry-napier/simmer"
-NOTARY_PROFILE="simmer-notary"
+NOTARY_PROFILE="${NOTARY_PROFILE:-simmer-notary}"
 SPARKLE_ACCOUNT="com.barrynapier.simmer"
 BUILD_NUMBER=$(git rev-list --count HEAD)
 OUT="build/release/$VERSION"
